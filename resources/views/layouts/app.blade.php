@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -75,8 +76,21 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        <main class="py-0">
+        <div class="container_height">
+    <div class="row align-items-start">
+        <div class="col-3 p-3">
+            <p>商品管理システム</p>
+            <a href="">商品一覧</a>
+        </div>
+
+        <div class="col-9 card p-3">
+        @yield('content')
+        </div>
+    </div>
+</div>
+
+
         </main>
     </div>
 </body>
