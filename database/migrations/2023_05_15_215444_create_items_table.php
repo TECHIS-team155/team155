@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->biginteger('user_id')->nullable();
             $table->string('name', 100)->nullable();
             $table->smallinteger('type');
-            $table->string('', 500);
+            $table->string('detail', 500);
             $table->timestamps();
         });
     }
