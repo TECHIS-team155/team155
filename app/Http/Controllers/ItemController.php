@@ -20,6 +20,18 @@ class ItemController extends Controller
         $this->middleware('auth');
     }
 
+    public function detail($id)
+    {
+        $item = Item::find($id);
+        // dd($item);
+        $types = Type::orderBy('id')->pluck('type_name', 'id');
+        return view('items.detail', compact('item','types'));
+    }
+    public function update($id)
+    {
+        return view('items.detail');
+    }
+
     /**
      * アイテム登録
      * 
