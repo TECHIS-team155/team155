@@ -73,4 +73,5 @@ class ItemController extends Controller
          $item = item::all();
          return view('items.itemlist', ['item' => $item]);
      }
+     
  }
