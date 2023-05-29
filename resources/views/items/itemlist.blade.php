@@ -14,7 +14,7 @@
         <tbody>
          @foreach ($item as $item)
             <tr>
-            <td>{{ $item->user_id }}</td>
+            <td>{{ $item->id }}</td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->type }}</td>
             <td>{{ $item->detail }}</td>
