@@ -58,9 +58,16 @@ class ItemController extends Controller
         $types = Type::orderBy('id')->pluck('type_name', 'id');
         return view('items.detail', compact('item','types'));
     }
-    public function update($id)
+    public function update(Request $request)
     {
-        return view('items.detail');
+        $item = Item::find($request->id);
+        $item->name = $request->name;
+        $item->type = $request->type;
+        $item->detail = $request->detail;
+        $item->zaiko = $request->zaiko;
+        $item->updated_at = now();
+        $item->save();
+        return redirect('/home');
     }
 
     /**
@@ -97,12 +104,4 @@ class ItemController extends Controller
         $types = Type::orderBy('id')->pluck('type_name', 'id');
         return view('items.create', ['types' => $types]);
     }
-
-     //商品一覧画面
-     public function itemlist()
-     {
-         $item = item::all();
-         return view('items.itemlist', ['item' => $item]);
-     }
-     
- }
+}
