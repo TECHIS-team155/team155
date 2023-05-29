@@ -12,4 +12,12 @@ class Type extends Model
     protected $fillable = [
         'type_name'
     ];
+
+    /**
+     * 商品との関係
+     */
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

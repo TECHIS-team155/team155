@@ -15,4 +15,12 @@ class Item extends Model
         'type',
         'detail'
     ];
+
+    /**
+     * 種別の取得
+     */
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

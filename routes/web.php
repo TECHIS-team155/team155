@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/itemlist', [App\Http\Controllers\ItemController::class, 'itemlist'])->name('itemlist');
 Route::get('/item/create', [App\Http\Controllers\ItemController::class, 'create'])->name('item/create');
 Route::post('/item', [App\Http\Controllers\ItemController::class, 'store'])->name('item');
 Route::get('/detail/{id}', [App\Http\Controllers\ItemController::class, 'detail'])->name('detail');

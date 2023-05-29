@@ -20,6 +20,37 @@ class ItemController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * 商品一覧
+     * 
+     * @param Request $request
+     * @return Response
+     */
+    public function itemlist(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        if ($keyword !== null) {
+            $keyword = mb_convert_kana($keyword, 'KV');
+        }
+
+        $items = Item::leftJoin('types', 'types.id', '=', 'items.type')
+                ->select('items.id', 'items.name', 'types.type_name', 'items.detail');
+
+        if (!empty($keyword)) {
+            $items = $items->where(function ($query) use ($keyword) {
+                $query->where('name', 'LIKE', '%'.$keyword.'%')
+                    ->orwhere('type_name', 'LIKE', '%'.$keyword.'%')
+                    ->orwhere('detail', 'LIKE', '%'.$keyword.'%');
+            });
+        }
+
+        $items = $items->get();
+        // dd($items);
+        return view('items.itemlist', [
+            'items' => $items,
+        ]);
+    }
+
     public function detail($id)
     {
         $item = Item::find($id);
@@ -53,7 +84,7 @@ class ItemController extends Controller
             'detail' => $request->detail,
         ]);
 
-        return redirect('/items');
+        return redirect('/itemlist');
     }
 
     /**
