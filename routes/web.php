@@ -23,4 +23,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/item/create', [App\Http\Controllers\ItemController::class, 'create'])->name('item/create');
 Route::post('/item', [App\Http\Controllers\ItemController::class, 'store'])->name('item');
 Route::get('/detail/{id}', [App\Http\Controllers\ItemController::class, 'detail'])->name('detail');
-Route::post('/update/{id}', [App\Http\Controllers\ItemController::class, 'update'])->name('update');
+Route::post('/update', [App\Http\Controllers\ItemController::class, 'update'])->name('update');
