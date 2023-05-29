@@ -25,3 +25,5 @@ Route::get('/item/create', [App\Http\Controllers\ItemController::class, 'create'
 Route::post('/item', [App\Http\Controllers\ItemController::class, 'store'])->name('item');
 Route::get('/detail/{id}', [App\Http\Controllers\ItemController::class, 'detail'])->name('detail');
 Route::post('/update/{id}', [App\Http\Controllers\ItemController::class, 'update'])->name('update');
+Route::get('/itemlist', [App\Http\Controllers\ItemController::class, 'itemlist'])->name('itemlist');
+

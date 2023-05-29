@@ -97,4 +97,12 @@ class ItemController extends Controller
         $types = Type::orderBy('id')->pluck('type_name', 'id');
         return view('items.create', ['types' => $types]);
     }
-}
+
+     //商品一覧画面
+     public function itemlist()
+     {
+         $item = item::all();
+         return view('items.itemlist', ['item' => $item]);
+     }
+     
+ }
