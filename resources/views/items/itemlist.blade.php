@@ -40,7 +40,7 @@
     <tbody>
         @foreach ($items as $item)
         <tr>
-            <td>{{ $item->id }}</td>
+            <td><a href="/detail/{{ $item->id }}">{{ $item->id }}</a></td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->type_name }}</td>
             <td>{{ $item->detail }}</td>

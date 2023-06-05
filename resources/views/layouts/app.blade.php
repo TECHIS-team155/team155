@@ -81,7 +81,7 @@
     <div class="row align-items-start">
         <div class="col-3 p-3 text-center">
             <p>商品管理システム</p>
-            <a href="" class="link-dark text-decoration-none">商品一覧</a>
+            <a href="/itemlist" class="link-dark text-decoration-none">商品一覧</a>
         </div>
 
         <div class="col-8 card p-3 mt-3">
