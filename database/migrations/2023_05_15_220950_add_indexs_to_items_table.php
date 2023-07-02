@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EditItemsTable extends Migration
+class AddIndexsToItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class EditItemsTable extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->foreignId('type_id')->nullable()->constrained('types');
+            $table->index(['user_id', 'name']);
         });
     }
 
@@ -26,7 +26,7 @@ class EditItemsTable extends Migration
     public function down()
     {
         Schema::table('items', function (Blueprint $table) {
-            //
+            $table->dropIndex(['user_id', 'name']);
         });
     }
 }

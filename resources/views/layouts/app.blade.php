@@ -79,12 +79,12 @@
         <main class="py-0">
         <div class="container_height">
     <div class="row align-items-start">
-        <div class="col-1 p-4 text-center">
-            <!-- <p>タイヤ管理システム</p> -->
-            <a href="/itemlist" class="link-dark text-decoration-none">在庫一覧</a>
+        <div class="col-3 p-3 text-center">
+            <p>商品管理システム</p>
+            <a href="/itemlist" class="link-dark text-decoration-none">商品一覧</a>
         </div>
 
-        <div class="col-11 card p-3 mt-3">
+        <div class="col-8 card p-3 mt-3">
         @yield('content')
         </div>
     </div>

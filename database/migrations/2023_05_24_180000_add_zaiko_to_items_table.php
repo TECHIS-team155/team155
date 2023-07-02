@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImageToItemsTable extends Migration
+class AddZaikoToItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,9 @@ class AddImageToItemsTable extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            // $table->text('image')->nullable();  //カラム追加
-            \DB::statement('ALTER TABLE items ADD image MEDIUMTEXT');
-
-    });
-}
+            $table->integer('zaiko');
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -28,7 +26,7 @@ class AddImageToItemsTable extends Migration
     public function down()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->dropColumn('image');  //カラムの削除
+            $table->dropColumn('zaiko');
         });
     }
 }

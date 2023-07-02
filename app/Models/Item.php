@@ -10,20 +10,10 @@ class Item extends Model
     use HasFactory;
 
     protected $fillable = [
-        'tire_id',
-        'size',
-        'number',
-        'tire_maker',
-        'inch',
-        'year',
-        'oblateness',
-        'ditch',
-        'eveluation',
-        'type_id',
-        'strength',
-        'specification',
-        'foil',
-        'image',
+        'user_id',
+        'name',
+        'type',
+        'detail'
     ];
 
     /**
@@ -31,6 +21,6 @@ class Item extends Model
      */
     public function type()
     {
-        return $this->belongsTo(Type::class,'type_id');
+        return $this->belongsTo(Type::class);
     }
 }

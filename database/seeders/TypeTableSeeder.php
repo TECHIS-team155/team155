@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Type;
+use Illuminate\Support\Facades\DB;
 
 class TypeTableSeeder extends Seeder
 {
@@ -14,7 +14,10 @@ class TypeTableSeeder extends Seeder
      */
     public function run()
     {
-        Type::create(['type_name' => 'ノーマルタイヤ']);
-        Type::create(['type_name' => '冬用タイヤ']);
+        DB::table('types')->insert([
+            ['type_name' => '車'],
+            ['type_name' => 'バイク'],
+            ['type_name' => '自転車'],
+        ]);
     }
 }
